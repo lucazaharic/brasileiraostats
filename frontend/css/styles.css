@@ -1,0 +1,395 @@
+/* ==========================================
+   Brasileirao Stats - Clean Architecture CSS
+   ========================================== */
+
+/* ==================== Variáveis ==================== */
+:root {
+    --primary-color: #009c3b;
+    --primary-dark: #007a2e;
+    --secondary-color: #0d2137;
+    --accent-color: #ffdf00;
+    --bg-light: #f8f9fa;
+    --bg-card: #ffffff;
+    --text-dark: #212529;
+    --text-muted: #6c757d;
+    --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.125);
+    --border-radius: 0.75rem;
+    --transition: all 0.3s ease;
+}
+
+/* ==================== Reset & Base ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-padding-top: 80px;
+}
+
+/* ==================== Navbar ==================== */
+.navbar {
+    padding: 1rem 0;
+    box-shadow: var(--shadow-md);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+}
+
+.nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
+/* ==================== Hero Section ==================== */
+.hero-section {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    padding: 5rem 0 4rem;
+    margin-bottom: 2rem;
+}
+
+.hero-section h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.stats-summary {
+    margin-top: 2rem;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: 1.5rem 2rem;
+    min-width: 140px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* ==================== Filtros ==================== */
+.filters-section .card {
+    border-radius: var(--border-radius);
+    background: var(--bg-card);
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-select,
+.form-control {
+    border-radius: 0.5rem;
+    border: 1px solid #dee2e6;
+    padding: 0.625rem 1rem;
+    transition: var(--transition);
+}
+
+.form-select:focus,
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 156, 59, 0.15);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 0.5rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+/* ==================== Seções ==================== */
+.section-title {
+    font-weight: 700;
+    color: var(--secondary-color);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+/* ==================== Cards de Jogadores ==================== */
+.player-card {
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.player-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.player-card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
+    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+}
+
+.player-card-img-placeholder {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+}
+
+.player-card-img-placeholder i {
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.player-card-body {
+    padding: 1.25rem;
+}
+
+.player-card-nome {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+}
+
+.player-card-posicao {
+    font-size: 0.875rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.player-card-clube {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.player-card-clube img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.player-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.player-stat {
+    text-align: center;
+}
+
+.player-stat-value {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.player-stat-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.player-stat-goals .player-stat-value {
+    color: var(--primary-color);
+}
+
+.player-stat-assists .player-stat-value {
+    color: #0d6efd;
+}
+
+.player-stat-yellow .player-stat-value {
+    color: #ffc107;
+}
+
+.player-stat-red .player-stat-value {
+    color: #dc3545;
+}
+
+/* ==================== Cards de Clubes ==================== */
+.clube-card {
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    height: 100%;
+}
+
+.clube-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.clube-card-img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.clube-card-body {
+    padding: 1rem;
+    text-align: center;
+}
+
+.clube-card-nome {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.clube-card-qtd {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* ==================== Modal ==================== */
+.modal-content {
+    border-radius: var(--border-radius);
+    border: none;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: 1px solid #e9ecef;
+}
+
+.toast {
+    border-radius: var(--border-radius);
+}
+
+/* ==================== Loading ==================== */
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* ==================== Footer ==================== */
+footer {
+    margin-top: auto;
+}
+
+footer p {
+    opacity: 0.9;
+}
+
+/* ==================== Responsivo ==================== */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 3rem 0 2rem;
+    }
+
+    .stat-item {
+        padding: 1rem 1.5rem;
+        min-width: 100px;
+    }
+
+    .stat-number {
+        font-size: 1.75rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    .player-card-img,
+    .player-card-img-placeholder {
+        height: 160px;
+    }
+}
+
+/* ==================== Badge Colors ==================== */
+.badge {
+    font-weight: 500;
+}
+
+/* ==================== Scrollbar ==================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
