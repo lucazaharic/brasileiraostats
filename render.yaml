@@ -1,0 +1,9 @@
+service: brasileirao-api
+runtime: java
+buildCommand: ./mvnw -DskipTests clean package
+startCommand: java -jar target/brasileirao-api-1.0.0.jar
+env:
+  - fromGroup: brasileriao-api-config
+    sync: false
+plans:
+  - free
